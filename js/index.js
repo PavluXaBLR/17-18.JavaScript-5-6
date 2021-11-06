@@ -99,15 +99,24 @@ console.log( calculator.mul() );
 *строку loremString я буду вводить вручную при вызове функции
 ** Учтите случайное нажатие на CapsLock и случайный пробел в начале ;)*/
 
-let srt = "loremString";
-function checkName(str) {
-	str = "loremString".includes("lorem");
-	str = "loremString".includes("ipsum");
-	str = "loremString".includes("amet");
+
+ let str = `loremString`;
+	function checkNameFirst(str, includes) {
+		let checkStr = str.toLowerCase() + str.trim();
+		return checkStr.includes(includes);
+
 }
-console.log(checkName(loremString))
-str.trim()
-//loremString
+
+console.log(checkNameFirst(``, `ipsum`))
+
+
+function checkName(str) {
+	let checkStr = str.toLowerCase() + str.trim();
+	return checkStr.includes(`lorem`) || checkStr.includes(`ipsum`) || checkStr.includes(`amet`);
+
+}
+
+console.log(checkName( ` IpSun loremString`))
 
 
 /*6) Напишите функцию funcName(str), возвращающую строку str с заглавным первым символом.*/
@@ -124,3 +133,18 @@ function funcName(str, maxLength) {
 	return  str.slice(0 , maxLength)+"...";
 }
 console.log(funcName("Привет , у меня не очень выходит все это и это грустно",  40))
+
+/*8) С помощью конструктора создать функцию, которая будет создавать объекты пользователей
+(user) у которых будут ключи name, surname, age, address */
+
+function Form (name, surname, age, address) {
+	this.name = name;
+	this.surname = surname;
+	this.age = age;
+	this.address = address;
+}
+
+
+let user = new Form (`Bob`, `Dub`, 21, `Klen st.`)
+
+console.log(user)
