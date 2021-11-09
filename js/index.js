@@ -100,9 +100,13 @@ console.log( calculator.mul() );
 ** Учтите случайное нажатие на CapsLock и случайный пробел в начале ;)*/
 
 let loremString = function (text) {
-	return checkStr.includes(`lorem`) || checkStr.includes(`ipsum`) || checkStr.includes(`amet`);
+	text.toLowerCase();
+	text.trim();
+	return text.includes(`lorem`) || text.includes(`ipsum`) || text.includes(`amet`);
 
 }
+
+console.log(loremString(`Hello my friend, ipsum`))
 
 
  /*let str = `loremString`;
@@ -123,43 +127,15 @@ function checkName(str) {
 
 console.log(checkName( ` IpSun loremString`))
 */
-console.log(loremString(`Hello my frands, opsun`))
 
 
 /*6) Напишите функцию funcName(str), возвращающую строку str с заглавным первым символом.*/
 
-let loremString = function (text) {
-	text.toLowerCase();
-	text.trim();
-	return text.includes(`lorem`) || text.includes(`ipsum`) || text.includes(`amet`);
-
-}
-
-console.log(loremString(`Hello my friend, ipsum`))
-
-/*let str = `loremString`;
-   function checkNameFirst(str, includes) {
-       let checkStr = str.toLowerCase() + str.trim();
-       return checkStr.includes(includes);
-
-}
-
-console.log(checkNameFirst(``, `ipsum`))
-
-
-function checkName(str) {
-   let checkStr = str.toLowerCase() + str.trim();
-   return checkStr.includes(`lorem`) || checkStr.includes(`ipsum`) || checkStr.includes(`amet`);
-
-}
-
-console.log(checkName( ` IpSun loremString`))
-*/
-/*function funcName(str) {
+function funcName(str) {
 	console.log(str[0].toUpperCase()+str.slice(1));
 }
 funcName("привет друг")
- */
+
 
 
 
@@ -167,6 +143,8 @@ funcName("привет друг")
 /*7) Напишите функцию funcName(str, maxLength), которая будет проверять длину строки, и если длина
 превышает максимальное значение длины, сокращать до этого значения + в конце добавить "..."
  */
+
+
 function funcName(str, maxLength) {
 	return  str.slice(0 , maxLength)+"...";
 }
